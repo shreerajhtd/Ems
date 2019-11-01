@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>List of {{ title }}.</h2>
+    <div class="row">
+        <div class="col-md-12">
+            {% if questions %}
+                <table class="table table-light table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Question</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                {% for question in questions %}
+                                    <a href="/polls/{{question.id}}/details/">{{ question.title }}</a></li>
+                                    <a href="/employee/{{ user.id }}/delete/" class="btn btn-danger float-right">Delete</a>
+                                    <a href="/employee/{{ user.id }}/edit/" class="btn btn-success float-right">Edit</a>
+                                    <a href="/employee/{{ user.id }}/details/" class="btn btn-success float-right">Details</a>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% else %}
+                <p> There is no question available. </p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

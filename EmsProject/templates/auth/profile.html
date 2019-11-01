@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h4> My Profile </h4>
+    <table class="table table-light table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th>First Name</th>
+                <th> {{ object.user.first_name }}</th>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <th> {{ object.user.last_name }}</th>
+            </tr><tr>
+                <th>Email Id</th>
+                <th> {{ object.user.email }}</th>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <th> {{ object.salary }}</th>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <th> {{ object.designation }}</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class = "text-right">
+        <a class="btn btn-warning" href="{% url 'update_profile' %}">Edit Profile</a>
+    </div>
+
+{% endblock %}
